@@ -50,7 +50,4 @@ private:
 	
 	UPROPERTY(VisibleAnywhere)
 	float Health;
-
-	UPROPERTY(VisibleAnywhere)
-	bool IsAlive = true;
 };
