@@ -11,6 +11,22 @@ class SIMPLESHOOTER_API AGun : public AActor
 {
 	GENERATED_BODY()
 
+public:
+	// Sets default values for this actor's properties
+	AGun();
+
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
+
+	void PullTrigger();
+
+
+
+protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+
+
 private:
 	UPROPERTY(VisibleAnywhere)
 	USceneComponent* SceneRoot;
@@ -18,15 +34,17 @@ private:
 	UPROPERTY(VisibleAnywhere)
 	USkeletalMeshComponent* Mesh;
 
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+	UPROPERTY(EditAnywhere)
+	UParticleSystem* MuzzleFlash;
 
-public:	
-	// Sets default values for this actor's properties
-	AGun();
+	UPROPERTY(EditAnywhere)
+	float MaxRange = 1000;
 
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+	UPROPERTY(EditAnywhere)
+	UParticleSystem* HitExplosion;
 
+	UPROPERTY(EditAnywhere)
+	float Damage = 10.f;
 };
+
+
