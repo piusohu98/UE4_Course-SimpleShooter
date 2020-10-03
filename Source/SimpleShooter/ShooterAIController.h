@@ -24,8 +24,10 @@ protected:
 	virtual void BeginPlay() override;
 
 private:
-	APawn* PlayerPawn = nullptr;
+	// APawn* PlayerPawn = nullptr;
 
 	UPROPERTY(EditAnywhere)
-	float AcceptanceRadius = 400.f;
+	class UBehaviorTree* AIBehavior = nullptr;
+
+	//float AcceptanceRadius = 400.f;
 };
