@@ -17,17 +17,14 @@ class SIMPLESHOOTER_API AShooterAIController : public AAIController
 public:
 	AShooterAIController();
 
-	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 protected:
 	virtual void BeginPlay() override;
 
 private:
-	// APawn* PlayerPawn = nullptr;
+	APawn* PlayerPawn = nullptr;
 
 	UPROPERTY(EditAnywhere)
 	class UBehaviorTree* AIBehavior = nullptr;
-
-	//float AcceptanceRadius = 400.f;
 };
