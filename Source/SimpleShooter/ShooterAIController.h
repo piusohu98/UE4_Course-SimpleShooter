@@ -18,6 +18,7 @@ public:
 	AShooterAIController();
 
 	virtual void Tick(float DeltaTime) override;
+	bool IsDead() const;
 
 protected:
 	virtual void BeginPlay() override;
